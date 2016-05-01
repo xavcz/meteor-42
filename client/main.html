@@ -86,12 +86,16 @@
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
+
+<!-- Login with Facebook -->
 <template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
+  <div>
+    {{#if currentUser}}
+      <h2>Hello {{currentUser.services.facebook.first_name}} !</h2>
+      <button id="logout" class="btn btn-primary">Logout</button>
+    {{else}}
+      <h2>Play with Meteor!</h2>
+      <button id="facebook-login" class="btn btn-primary"> Login with Facebook</button>
+    {{/if}}
+  </div>
 </template>

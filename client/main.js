@@ -20,3 +20,13 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+Template.info.events({
+  'click #facebook-login'(event) {
+    Meteor.loginWithFacebook({});
+  },
+
+  'click #logout'(event) {
+    Meteor.logout();
+  }
+});
