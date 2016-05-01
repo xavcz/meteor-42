@@ -82,8 +82,11 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  {{#each message in messages}}
+    <p>{{message.author}}: {{message.text}}</p>
+  {{else}}
+    <p>Hello?</p>
+  {{/each}}
 </template>
 
 
@@ -91,8 +94,16 @@
 <template name="info">
   <div>
     {{#if currentUser}}
-      <h2>Hello {{currentUser.services.facebook.first_name}} !</h2>
-      <button id="logout" class="btn btn-primary">Logout</button>
+      <div>
+        <h2>Hello {{currentUser.services.facebook.first_name}} !</h2>
+        <button id="logout" class="btn btn-primary">Logout</button>
+      </div>
+      <div style="margin-top: 10px;">
+        <form>
+          <div><input id="message" class="string optional" type="text" size="50" name="message" maxlength="42" /></div>
+          <div><input class="btn btn-primary" name="commit" type="submit" value="Send message" /></div>
+        </form>
+      </div>
     {{else}}
       <h2>Play with Meteor!</h2>
       <button id="facebook-login" class="btn btn-primary"> Login with Facebook</button>
