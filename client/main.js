@@ -1,7 +1,19 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+
+import Messages  from '/imports/api/messages/messages';
+import { add } from '/imports/api/messages/methods';
 
 import './main.html';
+
+Template.hello.onCreated(function () {
+  this.autorun(() => {
+    this.subscribe('messages.recents');
+    if (Meteor.userId()) {
+      this.subscribe('users.current');
+    }
+  });
+});
 
 Template.hello.helpers({
   messages() {
@@ -20,7 +32,7 @@ Template.info.events({
 
   'submit form'(event, instance) {
     event.preventDefault();
-    Meteor.call('messages.add', event.target.message.value);
+    add.call({ text: event.target.message.value });
     event.target.reset();
   },
 });
