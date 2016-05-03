@@ -11,6 +11,6 @@ import '/imports/api/users/server/publications';
 Meteor.startup(() => {
   ServiceConfiguration.configurations.upsert(
     { service: "facebook" },
-    { $set: { appId: "537498086420290", secret: "039da82517a4581fdfd74b659f3ba1c8" } }
+    { $set: { appId: Meteor.settings.facebook.appId, secret: Meteor.settings.facebook.secret } }
   );
 });
