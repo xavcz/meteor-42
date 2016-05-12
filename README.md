@@ -28,11 +28,12 @@ Clone the project
 git clone https://github.com/xavcz/meteor-42.git
 ```
 
-Run it:
+Install NPM packages & run it with the `sample_settings.json` file to be able to connect with Facebook. This file use my test app credentials.
 
 ```bash
 cd meteor-42
-meteor
+npm install
+meteor --settings sample_settings.json
 ```
 
 By default, you will run on the master branch which is built with React. If you want to switch on the totally insecure version built with Blaze, switch branch :
