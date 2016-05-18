@@ -8,6 +8,8 @@ import '/imports/api/messages/server/publications';
 import '/imports/api/users/users';
 import '/imports/api/users/server/publications';
 
+Kadira.connect('APP_ID', 'APP_SECRET');
+
 Meteor.startup(() => {
   ServiceConfiguration.configurations.upsert(
     { service: "facebook" },
