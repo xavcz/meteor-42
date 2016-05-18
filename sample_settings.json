@@ -1,6 +1,10 @@
 {
   "facebook": {
-    "appId": "537498086420290",
-    "secret": "039da82517a4581fdfd74b659f3ba1c8"
+    "appId": "FB_APP_ID",
+    "secret": "FB_APP_SECRET"
+  },
+  "kadira": {
+    "appId": "KADIRA_APP_ID",
+    "appSecret": "KADIRA_APP_SECRET"
   }
 }

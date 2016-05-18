@@ -1,4 +1,5 @@
 import React from 'react';
+import MobileDetect from 'mobile-detect';
 
 import { Meteor } from 'meteor/meteor';
 
@@ -9,7 +10,9 @@ export class UserLogin extends React.Component {
   }
 
   login() {
-    Meteor.loginWithFacebook();
+    const md = new MobileDetect();
+    const options = md.mobile() ? { loginStyle: 'redirect' } : { loginStyle: 'popup' };
+    Meteor.loginWithFacebook(options);
   }
 
   render() {

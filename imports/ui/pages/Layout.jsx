@@ -41,7 +41,7 @@ export default Layout = () => {
           <div id="content" role="main">
             <article>
               <div className="row">
-                <h2 className="span7 offset3">Meteor Demo @ 42</h2>
+                <h2 className="span7 offset3">Meteor Demo @ La Base</h2>
               </div>
 
               <div className="row">
